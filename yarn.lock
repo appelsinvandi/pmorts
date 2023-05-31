@@ -13,10 +13,10 @@ __metadata:
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.4.2
-    "@types/cli-progress": ^3
-    "@types/lodash": ^4
-    "@types/mime": ^3
-    "@types/node": ^18
+    "@types/cli-progress": ^3.11.0
+    "@types/lodash": ^4.14.195
+    "@types/mime": ^3.0.1
+    "@types/node": ^18.16.16
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     mime: ^3.0.0
@@ -64,7 +64,7 @@ __metadata:
   resolution: "@lib/constants@workspace:libs/constants"
   dependencies:
     "@total-typescript/ts-reset": ^0.4.2
-    "@types/node": ^18
+    "@types/node": ^18.16.16
     typescript: ^5.0.4
   languageName: unknown
   linkType: soft
@@ -76,10 +76,10 @@ __metadata:
     "@lib/media-info": "workspace:*"
     "@prisma/client": ^4.13.0
     "@total-typescript/ts-reset": ^0.4.2
-    "@types/cli-progress": ^3
-    "@types/lodash": ^4
-    "@types/mime": ^3
-    "@types/node": ^18
+    "@types/cli-progress": ^3.11.0
+    "@types/lodash": ^4.14.195
+    "@types/mime": ^3.0.1
+    "@types/node": ^18.16.16
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     mime: ^3.0.0
@@ -93,8 +93,8 @@ __metadata:
   resolution: "@lib/media-info@workspace:libs/media-info"
   dependencies:
     "@total-typescript/ts-reset": ^0.4.2
-    "@types/luxon": ^3.2.0
-    "@types/node": ^18
+    "@types/luxon": ^3.3.0
+    "@types/node": ^18.16.16
     luxon: ^3.3.0
     typescript: ^5.0.4
     zod: ^3.21.4
@@ -192,7 +192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cli-progress@npm:^3":
+"@types/cli-progress@npm:^3.11.0":
   version: 3.11.0
   resolution: "@types/cli-progress@npm:3.11.0"
   dependencies:
@@ -201,21 +201,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4":
-  version: 4.14.191
-  resolution: "@types/lodash@npm:4.14.191"
-  checksum: ba0d5434e10690869f32d5ea49095250157cae502f10d57de0a723fd72229ce6c6a4979576f0f13e0aa9fbe3ce2457bfb9fa7d4ec3d6daba56730a51906d1491
+"@types/lodash@npm:^4.14.195":
+  version: 4.14.195
+  resolution: "@types/lodash@npm:4.14.195"
+  checksum: 39b75ca635b3fa943d17d3d3aabc750babe4c8212485a4df166fe0516e39288e14b0c60afc6e21913cc0e5a84734633c71e617e2bd14eaa1cf51b8d7799c432e
   languageName: node
   linkType: hard
 
-"@types/luxon@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@types/luxon@npm:3.2.0"
-  checksum: 051bfbf841c6ce98728df6538342ce4aaddfcf0ec6e8b473e0195dcfc3ba6b1fe4b3ce17f2ba6d25344f41cb70032c1debe96da9e384e5f6e639665c1e6d368c
+"@types/luxon@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@types/luxon@npm:3.3.0"
+  checksum: f7e3a89fc3ca404fbc3ea538653ed6860bc28f570a8c4d6d24449b89b9b553b7d6ad6cc94a9e129c5b8c9a2b97f0c365b3017f811e59c4a859a9c219a1c918e0
   languageName: node
   linkType: hard
 
-"@types/mime@npm:^3":
+"@types/mime@npm:^3.0.1":
   version: 3.0.1
   resolution: "@types/mime@npm:3.0.1"
   checksum: 4040fac73fd0cea2460e29b348c1a6173da747f3a87da0dbce80dd7a9355a3d0e51d6d9a401654f3e5550620e3718b5a899b2ec1debf18424e298a2c605346e7
@@ -229,10 +229,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18":
+"@types/node@npm:*":
   version: 18.15.0
   resolution: "@types/node@npm:18.15.0"
   checksum: d81372276dd5053b1743338b61a2178ff9722dc609189d01fc7d1c2acd539414039e0e4780678730514390dad3f29c366a28c29e8dbd5b0025651181f6dd6669
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.16.16":
+  version: 18.16.16
+  resolution: "@types/node@npm:18.16.16"
+  checksum: 0efad726dd1e0bef71c392c708fc5d78c5b39c46b0ac5186fee74de4ccb1b2e847b3fa468da67d62812f56569da721b15bf31bdc795e6c69b56c73a45079ed2d
   languageName: node
   linkType: hard
 
