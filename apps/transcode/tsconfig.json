@@ -1,5 +1,9 @@
 {
   "extends": ["@tsconfig/recommended", "@tsconfig/node18", "@tsconfig/esm", "@tsconfig/strictest"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "moduleResolution": "nodenext"
+  },
   "ts-node": {
     "typeCheck": false,
     "transpileOnly": true

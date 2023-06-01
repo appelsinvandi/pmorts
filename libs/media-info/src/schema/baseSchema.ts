@@ -1,10 +1,10 @@
 import { z } from 'zod'
-import { trackSchema_audio } from './trackSchema_audio'
-import { trackSchema_general } from './trackSchema_general'
-import { trackSchema_menu } from './trackSchema_menu'
-import { trackSchema_other } from './trackSchema_other'
-import { trackSchema_text } from './trackSchema_text'
-import { trackSchema_video } from './trackSchema_video'
+import { trackSchema_audio } from './trackSchema_audio.js'
+import { trackSchema_general } from './trackSchema_general.js'
+import { trackSchema_menu } from './trackSchema_menu.js'
+import { trackSchema_other } from './trackSchema_other.js'
+import { trackSchema_text } from './trackSchema_text.js'
+import { trackSchema_video } from './trackSchema_video.js'
 
 export const mediaInfoOutputSchema = z
   .object({

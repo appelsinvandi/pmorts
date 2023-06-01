@@ -1,6 +1,5 @@
 import { z } from 'zod'
-import { dateSchema, yesNoBooleanSchema } from './helpers'
-import { encodableTextSchema } from './helpers/titleSchema'
+import { dateSchema, yesNoBooleanSchema, encodableTextSchema } from './helpers/index.js'
 
 export const trackSchema_general = z
   .object({

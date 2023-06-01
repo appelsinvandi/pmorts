@@ -1,5 +1,5 @@
 import path from 'path'
-import { appConfigSchema } from './src/appConfigSchema'
+import { appConfigSchema } from './src/appConfigSchema.js'
 import { z } from 'zod'
 import { MediaRoots } from '@lib/constants'
 

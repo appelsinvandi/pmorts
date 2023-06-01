@@ -1,6 +1,5 @@
 import { z } from 'zod'
-import { dateSchema, languageSchema, yesNoBooleanSchema } from './helpers'
-import { encodableTextSchema } from './helpers/titleSchema'
+import { dateSchema, encodableTextSchema, languageSchema, yesNoBooleanSchema } from './helpers/index.js'
 
 export const trackSchema_audio = z
   .object({

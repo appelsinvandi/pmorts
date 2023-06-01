@@ -1,6 +1,9 @@
 {
   "name": "@lib/media-cache",
-  "main": "src/index.ts",
+  "type": "module",
+  "exports": [
+    "./src/index.mjs"
+  ],
   "dependencies": {
     "@lib/media-info": "workspace:*",
     "@prisma/client": "^4.15.0",

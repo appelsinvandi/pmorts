@@ -1,1 +1,1 @@
-export * from './MediaCacheEntry'
+export * from './MediaCacheEntry.js'

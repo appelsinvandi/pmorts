@@ -2,7 +2,7 @@ import z from 'zod'
 
 export const languageSchema = z
   .string()
-  .transform((e) => e.toLowerCase().split('-')[0])
+  .transform((e) => e.toLowerCase().split('-')[0]!)
   .transform((e) => iso639ConversionMap[e] ?? e)
   .pipe(
     z.enum([

@@ -1,11 +1,11 @@
-import { MediaInfoOutput } from '@lib/media-info'
+import { type MediaInfoOutput } from '@lib/media-info'
 import fs from 'fs'
 import _ from 'lodash'
 import z from 'zod'
-import { TranscodeReason } from './TranscodeReason'
-import { rulesSchema } from './appConfigSchema'
-import { getMediaTracks } from './getMediaTracks'
-import { spawnAssist } from './spawnAssist'
+import { TranscodeReason } from './TranscodeReason.js'
+import { rulesSchema } from './appConfigSchema.js'
+import { getMediaTracks } from './getMediaTracks.js'
+import { spawnAssist } from './spawnAssist.js'
 
 export async function ffmpeg(
   inputPath: string,
@@ -23,7 +23,7 @@ export async function ffmpeg(
   // Subs extraction
   if (transcodeReasons.includes(TranscodeReason.ExtractTextTracks)) {
     for (let i in textTracks) {
-      const t = textTracks[i]
+      const t = textTracks[i]!
 
       if (!rules.text.language.allowed.includes(t.Language)) continue
 
@@ -77,6 +77,7 @@ export async function ffmpeg(
 
   //   - Video
   const videoTrack = videoTracks[0]
+  if (!videoTrack) throw new Error('hglorjwbfl')
   const videoEncodingParams = rules.video.encodingParams
   let videoFilters: string[] = []
 

@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { languageSchema } from './helpers'
+import { languageSchema } from './helpers/index.js'
 
 export const trackSchema_menu = z
   .object({

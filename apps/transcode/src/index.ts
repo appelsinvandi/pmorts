@@ -1,11 +1,11 @@
 import { GetMediaCacheMap, UpdateMediaCache } from '@lib/media-cache'
 import { isGeneralTrack } from '@lib/media-info'
-import _, { Truthy } from 'lodash'
-import config from '../config'
-import { TranscodeReason } from './TranscodeReason'
-import { appConfigSchema } from './appConfigSchema'
-import { ffmpeg } from './ffmpeg'
-import { getMediaTracks } from './getMediaTracks'
+import _, { type Truthy } from 'lodash'
+import config from '../config.js'
+import { TranscodeReason } from './TranscodeReason.js'
+import { appConfigSchema } from './appConfigSchema.js'
+import { ffmpeg } from './ffmpeg.js'
+import { getMediaTracks } from './getMediaTracks.js'
 
 main().catch((err) => console.dir(err, { depth: Infinity }))
 
@@ -47,7 +47,7 @@ async function main() {
 
         if (videoTracks.length !== 1) console.log('Video tracks count invalid', m.filePath)
         if (videoTracks.length !== 1) return null
-        const videoTrack = videoTracks[0]
+        const videoTrack = videoTracks[0]!
 
         if (!r.rules.general.extension.allowed.some((ext) => m.filePath.endsWith(`.${ext}`))) {
           reasons.push(TranscodeReason.BadContainer)
@@ -104,10 +104,12 @@ async function main() {
     [(e) => _.sumBy(e.reasons, (v) => 1 << v), (e) => e.mediaInfo.media.track.find(isGeneralTrack)!.OverallBitRate],
     ['desc', 'desc']
   )
+  console.log(prioritizedTranscodeQueue[0])
+  return
   await ffmpeg(
-    prioritizedTranscodeQueue[0].file.filePath,
-    prioritizedTranscodeQueue[0].file.mediaInfo,
-    prioritizedTranscodeQueue[0].reasons,
-    prioritizedTranscodeQueue[0].rules
+    prioritizedTranscodeQueue[0]!.file.filePath,
+    prioritizedTranscodeQueue[0]!.file.mediaInfo,
+    prioritizedTranscodeQueue[0]!.reasons,
+    prioritizedTranscodeQueue[0]!.rules
   )
 }

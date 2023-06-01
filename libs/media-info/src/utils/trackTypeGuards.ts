@@ -1,4 +1,4 @@
-import { MediaInfoOutput } from '../types'
+import type { MediaInfoOutput } from '../types.js'
 
 export const isAudioTrack = trackTypeGuardFactory('Audio')
 export const isGeneralTrack = trackTypeGuardFactory('General')

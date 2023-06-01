@@ -1,4 +1,4 @@
-import { MediaInfoOutput } from '@lib/media-info'
-import { Video } from '../__generated__/prisma/client'
+import { type MediaInfoOutput } from '@lib/media-info'
+import { type Video } from '../__generated__/prisma/client/index.js'
 
 export type MediaCacheEntry = Video & { mediaInfo: MediaInfoOutput }

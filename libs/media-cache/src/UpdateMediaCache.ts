@@ -4,7 +4,7 @@ import fs from 'fs'
 import _ from 'lodash'
 import mime from 'mime'
 import path from 'path'
-import { db } from './utils/db'
+import { db } from './utils/db.js'
 import cliProgress from 'cli-progress'
 
 export async function UpdateMediaCache() {

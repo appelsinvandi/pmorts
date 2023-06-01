@@ -1,6 +1,9 @@
 {
   "name": "@lib/media-info",
-  "main": "src/index.ts",
+  "type": "module",
+  "exports": [
+    "./src/index.mjs"
+  ],
   "dependencies": {
     "luxon": "^3.3.0",
     "zod": "^3.21.4"

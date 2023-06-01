@@ -1,4 +1,4 @@
-import { MediaInfoOutput, isAudioTrack, isGeneralTrack, isTextTrack, isVideoTrack } from '@lib/media-info'
+import { type MediaInfoOutput, isAudioTrack, isGeneralTrack, isTextTrack, isVideoTrack } from '@lib/media-info'
 
 export function getMediaTracks(mediaInfo: MediaInfoOutput) {
   return mediaInfo.media.track.reduce(

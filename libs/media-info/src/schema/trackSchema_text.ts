@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { languageSchema, yesNoBooleanSchema } from './helpers'
+import { languageSchema, yesNoBooleanSchema } from './helpers/index.js'
 
 export const trackSchema_text = z
   .object({

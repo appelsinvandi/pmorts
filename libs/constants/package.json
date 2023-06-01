@@ -1,6 +1,9 @@
 {
   "name": "@lib/constants",
-  "main": "src/index.ts",
+  "type": "module",
+  "exports": [
+    "./src/index.mjs"
+  ],
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.4.2",
     "@types/node": "^18.16.16",

@@ -1,5 +1,5 @@
-import { MediaInfoOutput } from '@lib/media-info'
-import { db } from './utils/db'
+import { type MediaInfoOutput } from '@lib/media-info'
+import { db } from './utils/db.js'
 
 export async function GetMediaCache() {
   return await db.video.findMany().then((e) =>

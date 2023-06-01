@@ -1,9 +1,9 @@
 import { spawn } from 'child_process'
 import path from 'path'
-import { mediaInfoOutputSchema } from './schema'
+import { mediaInfoOutputSchema } from './schema/index.js'
 
-export * from './types'
-export * from './utils/trackTypeGuards'
+export * from './types.js'
+export * from './utils/trackTypeGuards.js'
 
 export async function GetMediaInfo(filePath: string) {
   const commandArgs: string[] = []
