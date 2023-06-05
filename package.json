@@ -18,5 +18,8 @@
     "pretty-quick": "^3.1.3",
     "tslib": "^2.5.3",
     "typescript": "^5.1.3"
+  },
+  "resolutions": {
+    "ink@^4.2.0": "patch:ink@npm%3A4.2.0#./.yarn/patches/ink-npm-4.2.0-fe742db375.patch"
   }
 }

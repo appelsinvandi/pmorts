@@ -2,7 +2,7 @@
   "name": "@lib/media-info",
   "type": "module",
   "exports": [
-    "./src/index.mjs"
+    "./src/index.mts"
   ],
   "dependencies": {
     "luxon": "^3.3.0",

@@ -1,13 +1,24 @@
 import { z } from 'zod'
-import { dateSchema, encodableTextSchema, languageSchema, yesNoBooleanSchema } from './helpers/index.js'
+import {
+  dateSchema,
+  encodableTextSchema,
+  languageSchema,
+  yesNoBooleanSchema,
+} from './helpers/index.js'
 
+export type MediaInfoTrackVideo = z.infer<typeof trackSchema_video>
 export const trackSchema_video = z
   .object({
     '@type': z.literal('Video'),
     '@typeorder': z.coerce.number().int().nonnegative().optional(),
-    StreamOrder: z.union([z.coerce.number().int().nonnegative(), z.string().regex(/^\d+-\d+$/)]).optional(),
+    StreamOrder: z
+      .union([
+        z.coerce.number().int().nonnegative(),
+        z.string().regex(/^\d+-\d+$/),
+      ])
+      .optional(),
     FirstPacketOrder: z.coerce.number().int().nonnegative().optional(),
-    ID: z.coerce.number().int().nonnegative().optional(),
+    ID: z.coerce.number().int().nonnegative().transform(String).optional(),
     MenuID: z.coerce.number().int().nonnegative().optional(),
     UniqueID: z.string().optional(),
 
@@ -15,7 +26,15 @@ export const trackSchema_video = z
 
     Language: languageSchema,
 
-    Format: z.enum(['AV1', 'AVC', 'HEVC', 'MPEG Video', 'MPEG-4 Visual', 'Sorenson Spark', 'VC-1']),
+    Format: z.enum([
+      'AV1',
+      'AVC',
+      'HEVC',
+      'MPEG Video',
+      'MPEG-4 Visual',
+      'Sorenson Spark',
+      'VC-1',
+    ]),
     Format_Version: z.coerce.number().int().positive().optional(),
     Format_Profile: z
       .enum([
@@ -33,12 +52,29 @@ export const trackSchema_video = z
       ])
       .optional(),
     Format_Level: z
-      .enum(['1', '1.3', '3', '3.1', '3.2', '4', '4.1', '4.2', '5', '5.1', '5.2', '6.2', 'High 1440', 'HL'])
+      .enum([
+        '1',
+        '1.3',
+        '3',
+        '3.1',
+        '3.2',
+        '4',
+        '4.1',
+        '4.2',
+        '5',
+        '5.1',
+        '5.2',
+        '6.2',
+        'High 1440',
+        'HL',
+      ])
       .optional(),
     Format_Tier: z.enum(['High', 'Main']).optional(),
     Format_Settings_CABAC: yesNoBooleanSchema.optional(),
     Format_Settings_RefFrames: z.coerce.number().int().positive().optional(),
-    Format_Settings_BVOP: z.union([yesNoBooleanSchema, z.literal('1'), z.literal('2')]).optional(),
+    Format_Settings_BVOP: z
+      .union([yesNoBooleanSchema, z.literal('1'), z.literal('2')])
+      .optional(),
     Format_Settings_GMC: z.literal('0').pipe(z.coerce.number()).optional(),
     Format_Settings_GOP: z
       .string()
@@ -124,15 +160,31 @@ export const trackSchema_video = z
     ScanOrder: z.enum(['TFF']).optional(),
     ScanType: z.enum(['Interlaced', 'Progressive']).optional(),
     colour_description_present: yesNoBooleanSchema.optional(),
-    colour_description_present_Source: z.enum(['Container', 'Container / Stream', 'Stream']).optional(),
+    colour_description_present_Source: z
+      .enum(['Container', 'Container / Stream', 'Stream'])
+      .optional(),
     colour_range: z.enum(['Full', 'Limited']).optional(),
-    colour_range_Source: z.enum(['Container', 'Container / Stream', 'Stream']).optional(),
-    colour_primaries: z.enum(['BT.2020', 'BT.601 NTSC', 'BT.601 PAL', 'BT.709', 'Display P3']).optional(),
-    colour_primaries_Source: z.enum(['Container', 'Container / Stream', 'Stream']).optional(),
-    transfer_characteristics: z.enum(['BT.470 System B/G', 'BT.470 System M', 'BT.601', 'BT.709', 'PQ']).optional(),
-    transfer_characteristics_Source: z.enum(['Container', 'Container / Stream', 'Stream']).optional(),
-    matrix_coefficients: z.enum(['BT.2020 non-constant', 'BT.470 System B/G', 'BT.601', 'BT.709']).optional(),
-    matrix_coefficients_Source: z.enum(['Container', 'Container / Stream', 'Stream']).optional(),
+    colour_range_Source: z
+      .enum(['Container', 'Container / Stream', 'Stream'])
+      .optional(),
+    colour_primaries: z
+      .enum(['BT.2020', 'BT.601 NTSC', 'BT.601 PAL', 'BT.709', 'Display P3'])
+      .optional(),
+    colour_primaries_Source: z
+      .enum(['Container', 'Container / Stream', 'Stream'])
+      .optional(),
+    transfer_characteristics: z
+      .enum(['BT.470 System B/G', 'BT.470 System M', 'BT.601', 'BT.709', 'PQ'])
+      .optional(),
+    transfer_characteristics_Source: z
+      .enum(['Container', 'Container / Stream', 'Stream'])
+      .optional(),
+    matrix_coefficients: z
+      .enum(['BT.2020 non-constant', 'BT.470 System B/G', 'BT.601', 'BT.709'])
+      .optional(),
+    matrix_coefficients_Source: z
+      .enum(['Container', 'Container / Stream', 'Stream'])
+      .optional(),
 
     StreamSize: z.coerce.number().int().positive().optional(),
     Source_StreamSize: z.coerce.number().int().positive().optional(),

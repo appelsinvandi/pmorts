@@ -2,6 +2,7 @@ import path from 'path'
 import { appConfigSchema } from './src/appConfigSchema.js'
 import { z } from 'zod'
 import { MediaRoots } from '@lib/constants'
+import { setMaxIdleHTTPParsers } from 'http'
 
 const mediaRoot = MediaRoots.M
 
@@ -15,8 +16,39 @@ const audioBaseRules = {
 
     bitrate: '192K',
   },
-} satisfies Partial<z.infer<typeof appConfigSchema>['mediaRoots'][number]['rules']['audio']>
+} satisfies Partial<
+  Exclude<
+    z.infer<typeof appConfigSchema>['mediaRoots'][number]['rules'],
+    undefined
+  >['audio']
+>
 
+const config: z.infer<typeof appConfigSchema> = {
+  mediaRoots: [
+    {
+      name: 'default',
+      directories: [
+        path.resolve(mediaRoot, 'movies', 'default'),
+        path.resolve(mediaRoot, 'theatre'),
+        path.resolve(mediaRoot, 'tv', 'default'),
+      ],
+    },
+    {
+      name: 'danish',
+      directories: [
+        path.resolve(mediaRoot, 'movies', 'Danish'),
+        path.resolve(mediaRoot, 'tv', 'advent-calendars'),
+        path.resolve(mediaRoot, 'tv', 'Danish'),
+      ],
+    },
+    {
+      name: 'anime',
+      directories: [path.resolve(mediaRoot, 'tv', 'anime')],
+    },
+  ],
+}
+
+/*
 const config: z.infer<typeof appConfigSchema> = {
   mediaRoots: [
     {
@@ -181,5 +213,6 @@ const config: z.infer<typeof appConfigSchema> = {
     },
   ],
 }
+*/
 
 export default appConfigSchema.parse(config)

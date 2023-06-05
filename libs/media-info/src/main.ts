@@ -3,6 +3,14 @@ import path from 'path'
 import { mediaInfoOutputSchema } from './schema/index.js'
 
 export * from './types.js'
+export type {
+  MediaInfoTrackAudio,
+  MediaInfoTrackGeneral,
+  MediaInfoTrackMenu,
+  MediaInfoTrackOther,
+  MediaInfoTrackText,
+  MediaInfoTrackVideo,
+} from './schema/index.js'
 export * from './utils/trackTypeGuards.js'
 
 export async function GetMediaInfo(filePath: string) {
@@ -15,7 +23,8 @@ export async function GetMediaInfo(filePath: string) {
   for await (let chunk of mediaInfoStream.stdout) mediaInfoOutput += chunk
 
   const exitCode = await new Promise((r) => mediaInfoStream.once('exit', r))
-  if (exitCode !== 0) throw new Error(`"mediainfo" exited with code ${exitCode}`)
+  if (exitCode !== 0)
+    throw new Error(`"mediainfo" exited with code ${exitCode}`)
 
   const parsedRes = JSON.parse(mediaInfoOutput)
   const validationRes = mediaInfoOutputSchema.safeParse(parsedRes)
@@ -29,7 +38,11 @@ export async function GetMediaInfo(filePath: string) {
             const value = e.path.reduce((acc, c) => acc[c], parsedRes as any)
             return [
               `    - ${e.path.join('.')}: ${e.message}`,
-              `        - Got: ${typeof value === 'object' ? JSON.stringify(value, null, 2) : value}`,
+              `        - Got: ${
+                typeof value === 'object'
+                  ? JSON.stringify(value, null, 2)
+                  : value
+              }`,
             ]
           })
           .join('\n')

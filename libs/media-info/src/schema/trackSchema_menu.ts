@@ -1,12 +1,18 @@
 import { z } from 'zod'
 import { languageSchema } from './helpers/index.js'
 
+export type MediaInfoTrackMenu = z.infer<typeof trackSchema_menu>
 export const trackSchema_menu = z
   .object({
     '@type': z.literal('Menu'),
     '@typeorder': z.coerce.number().int().nonnegative().optional(),
-    StreamOrder: z.union([z.coerce.number().int().nonnegative(), z.string().regex(/^\d+-\d+$/)]).optional(),
-    ID: z.coerce.number().int().nonnegative().optional(),
+    StreamOrder: z
+      .union([
+        z.coerce.number().int().nonnegative(),
+        z.string().regex(/^\d+-\d+$/),
+      ])
+      .optional(),
+    ID: z.coerce.number().int().nonnegative().transform(String).optional(),
     MenuID: z.coerce.number().int().nonnegative().optional(),
 
     Language: languageSchema.optional(),

@@ -1,13 +1,24 @@
 import { z } from 'zod'
-import { dateSchema, encodableTextSchema, languageSchema, yesNoBooleanSchema } from './helpers/index.js'
+import {
+  dateSchema,
+  encodableTextSchema,
+  languageSchema,
+  yesNoBooleanSchema,
+} from './helpers/index.js'
 
+export type MediaInfoTrackAudio = z.infer<typeof trackSchema_audio>
 export const trackSchema_audio = z
   .object({
     '@type': z.literal('Audio'),
     '@typeorder': z.coerce.number().int().nonnegative().optional(),
-    StreamOrder: z.union([z.coerce.number().int().nonnegative(), z.string().regex(/^\d+-\d+$/)]).optional(),
+    StreamOrder: z
+      .union([
+        z.coerce.number().int().nonnegative(),
+        z.string().regex(/^\d+-\d+$/),
+      ])
+      .optional(),
     FirstPacketOrder: z.coerce.number().int().nonnegative().optional(),
-    ID: z.coerce.number().int().nonnegative().optional(),
+    ID: z.coerce.number().int().nonnegative().transform(String).optional(),
     MenuID: z.coerce.number().int().nonnegative().optional(),
     UniqueID: z.string().optional(),
     OriginalSourceMedium_ID: z.coerce.number().optional(),
@@ -15,15 +26,32 @@ export const trackSchema_audio = z
     Title: encodableTextSchema.optional(),
     Language: languageSchema,
 
-    Format: z.enum(['AAC', 'AC-3', 'DTS', 'E-AC-3', 'FLAC', 'MLP FBA', 'MPEG Audio', 'Opus', 'Vorbis', 'WMA']),
+    Format: z.enum([
+      'AAC',
+      'AC-3',
+      'DTS',
+      'E-AC-3',
+      'FLAC',
+      'MLP FBA',
+      'MPEG Audio',
+      'Opus',
+      'Vorbis',
+      'WMA',
+    ]),
     Format_Profile: z.enum(['Layer 2', 'Layer 3']).optional(),
     Format_Version: z.coerce.number().int().positive().optional(),
-    Format_AdditionalFeatures: z.enum(['16-ch', 'ES XXCH', 'JOC', 'LC', 'LC SBR', 'LTP', 'Main', 'XLL']).optional(),
-    Format_Settings_Mode: z.enum(['16', 'Dolby Surround', 'Dolby Surround EX', 'Joint stereo']).optional(),
+    Format_AdditionalFeatures: z
+      .enum(['16-ch', 'ES XXCH', 'JOC', 'LC', 'LC SBR', 'LTP', 'Main', 'XLL'])
+      .optional(),
+    Format_Settings_Mode: z
+      .enum(['16', 'Dolby Surround', 'Dolby Surround EX', 'Joint stereo'])
+      .optional(),
     Format_Settings_ModeExtension: z.enum(['MS Stereo']).optional(),
     Format_Settings_Floor: z.enum(['1']).optional(),
     Format_Settings_PS: z.enum(['No (Explicit)']).optional(),
-    Format_Settings_SBR: z.enum(['Yes (Explicit)', 'Yes (Implicit)', 'Yes (NBC)', 'No (Explicit)']).optional(),
+    Format_Settings_SBR: z
+      .enum(['Yes (Explicit)', 'Yes (Implicit)', 'Yes (NBC)', 'No (Explicit)'])
+      .optional(),
     Format_Commercial_IfAny: z
       .enum([
         'Dolby Digital Plus with Dolby Atmos',
@@ -85,7 +113,24 @@ export const trackSchema_audio = z
     ChannelLayout: z
       .string()
       .transform((e) => e.split(' '))
-      .pipe(z.enum(['C', 'Cb', 'L', 'LFE', 'Lb', 'Ls', 'Lw', 'M', 'R', 'Rb', 'Rs', 'Rw']).array())
+      .pipe(
+        z
+          .enum([
+            'C',
+            'Cb',
+            'L',
+            'LFE',
+            'Lb',
+            'Ls',
+            'Lw',
+            'M',
+            'R',
+            'Rb',
+            'Rs',
+            'Rw',
+          ])
+          .array()
+      )
       .optional(),
 
     SamplesPerFrame: z.coerce.number().int().positive().optional(),
@@ -95,6 +140,8 @@ export const trackSchema_audio = z
     BitDepth_Detected: z.enum(['16', '20']).optional(),
 
     FrameRate: z.coerce.number().positive().optional(),
+    FrameRate_Num: z.coerce.number().int().positive().optional(),
+    FrameRate_Den: z.literal('1').optional(),
     FrameCount: z.coerce.number().int().positive().optional(),
     Source_FrameCount: z.coerce.number().int().positive().optional(),
 

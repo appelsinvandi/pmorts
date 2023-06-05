@@ -30,7 +30,9 @@ async function main() {
   const mediaCacheArray = [...mediaCacheMap.values()]
   const mediaRoots = configValRes.data.mediaRoots.map((e) => ({
     ...e,
-    media: e.directories.flatMap((d) => mediaCacheArray.filter((m) => m.filePath.startsWith(d))),
+    media: e.directories.flatMap((d) =>
+      mediaCacheArray.filter((m) => m.filePath.startsWith(d))
+    ),
   }))
 
   const transcodeQueue = mediaRoots
@@ -41,44 +43,66 @@ async function main() {
 
         const mediaInfo = m.mediaInfo
 
-        const { audioTracks, generalTrack, textTracks, videoTracks } = getMediaTracks(mediaInfo)
+        const { audioTracks, generalTrack, textTracks, videoTracks } =
+          getMediaTracks(mediaInfo)
 
         if (generalTrack == null) return null
 
-        if (videoTracks.length !== 1) console.log('Video tracks count invalid', m.filePath)
+        if (videoTracks.length !== 1)
+          console.log('Video tracks count invalid', m.filePath)
         if (videoTracks.length !== 1) return null
         const videoTrack = videoTracks[0]!
 
-        if (!r.rules.general.extension.allowed.some((ext) => m.filePath.endsWith(`.${ext}`))) {
+        if (
+          !r.rules.general.extension.allowed.some((ext) =>
+            m.filePath.endsWith(`.${ext}`)
+          )
+        ) {
           reasons.push(TranscodeReason.BadContainer)
         }
 
         if (
-          audioTracks.some((t) => !rules.audio.language.allowed.includes(t.Language)) &&
-          audioTracks.some((t) => rules.audio.language.allowed.includes(t.Language))
+          audioTracks.some(
+            (t) => !rules.audio.language.allowed.includes(t.Language)
+          ) &&
+          audioTracks.some((t) =>
+            rules.audio.language.allowed.includes(t.Language)
+          )
         ) {
           reasons.push(TranscodeReason.SurplusAudioTracks)
         }
-        if (!audioTracks.every((t) => rules.audio.codec.allowed.includes(t.Format))) {
+        if (
+          !audioTracks.every((t) =>
+            rules.audio.codec.allowed.includes(t.Format)
+          )
+        ) {
           reasons.push(TranscodeReason.BadAudioCodec)
         }
 
         if (
-          textTracks.some((t) => !rules.text.language.allowed.includes(t.Language)) &&
-          textTracks.some((t) => rules.text.language.allowed.includes(t.Language))
+          textTracks.some(
+            (t) => !rules.text.language.allowed.includes(t.Language)
+          ) &&
+          textTracks.some((t) =>
+            rules.text.language.allowed.includes(t.Language)
+          )
         ) {
           reasons.push(TranscodeReason.SurplusTextTracks)
         }
         if (
           rules.text.style === 'external' &&
-          textTracks.filter((t) => rules.text.language.allowed.includes(t.Language)).length > 0
+          textTracks.filter((t) =>
+            rules.text.language.allowed.includes(t.Language)
+          ).length > 0
         ) {
           reasons.push(TranscodeReason.ExtractTextTracks)
         }
 
         if (
-          Math.max(videoTrack.Width, videoTrack.Height) > rules.video.resolutionBoundingBox.longEdgePx ||
-          Math.min(videoTrack.Width, videoTrack.Height) > rules.video.resolutionBoundingBox.shortEdgePx
+          Math.max(videoTrack.Width, videoTrack.Height) >
+            rules.video.resolutionBoundingBox.longEdgePx ||
+          Math.min(videoTrack.Width, videoTrack.Height) >
+            rules.video.resolutionBoundingBox.shortEdgePx
         ) {
           reasons.push(TranscodeReason.BloatedVideoResolution)
         }
@@ -101,11 +125,14 @@ async function main() {
 
   const prioritizedTranscodeQueue = _.orderBy(
     transcodeQueue,
-    [(e) => _.sumBy(e.reasons, (v) => 1 << v), (e) => e.mediaInfo.media.track.find(isGeneralTrack)!.OverallBitRate],
+    [
+      (e) => _.sumBy(e.reasons, (v) => 1 << v),
+      (e) => e.mediaInfo.media.track.find(isGeneralTrack)!.OverallBitRate,
+    ],
     ['desc', 'desc']
   )
   console.log(prioritizedTranscodeQueue[0])
-  return
+  return null
   await ffmpeg(
     prioritizedTranscodeQueue[0]!.file.filePath,
     prioritizedTranscodeQueue[0]!.file.mediaInfo,

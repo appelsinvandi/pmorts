@@ -1,14 +1,20 @@
 import { z } from 'zod'
 import { languageSchema, yesNoBooleanSchema } from './helpers/index.js'
 
+export type MediaInfoTrackText = z.infer<typeof trackSchema_text>
 export const trackSchema_text = z
   .object({
     '@type': z.literal('Text'),
     '@typeorder': z.coerce.number().int().nonnegative().optional(),
-    StreamOrder: z.union([z.coerce.number().int().nonnegative(), z.string().regex(/^\d+-\d+$/)]).optional(),
+    StreamOrder: z
+      .union([
+        z.coerce.number().int().nonnegative(),
+        z.string().regex(/^\d+-\d+$/),
+      ])
+      .optional(),
     ID: z
       .union([
-        z.coerce.number().int().nonnegative().optional(),
+        z.coerce.number().int().nonnegative().transform(String),
         z.string().regex(/^\d+-\d+$/),
         z.string().regex(/^\d+-CC1$/),
       ])
@@ -19,10 +25,28 @@ export const trackSchema_text = z
     Title: z.string().optional(),
     Language: languageSchema,
 
-    Format: z.enum(['ASS', 'EIA-608', 'EIA-708', 'PGS', 'UTF-8', 'VobSub', 'S_TEXT/WEBVTT']),
+    Format: z.enum([
+      'ASS',
+      'EIA-608',
+      'EIA-708',
+      'PGS',
+      'SSA',
+      'UTF-8',
+      'VobSub',
+      'S_TEXT/WEBVTT',
+    ]),
     MuxingMode: z.enum(['SCTE 128 / DTVCC Transport', 'zlib']).optional(),
     MuxingMode_MoreInfo: z.string().optional(),
-    CodecID: z.enum(['S_HDMV/PGS', 'S_TEXT/ASS', 'S_TEXT/UTF8', 'S_VOBSUB', 'S_TEXT/WEBVTT']).optional(),
+    CodecID: z
+      .enum([
+        'S_HDMV/PGS',
+        'S_TEXT/ASS',
+        'S_TEXT/SSA',
+        'S_TEXT/UTF8',
+        'S_VOBSUB',
+        'S_TEXT/WEBVTT',
+      ])
+      .optional(),
 
     Duration: z.coerce.number().nonnegative().optional(),
     Duration_Start: z.coerce.number().nonnegative().optional(),
@@ -33,6 +57,8 @@ export const trackSchema_text = z
     BitRate_Mode: z.enum(['CBR']).optional(),
 
     FrameRate: z.coerce.number().positive().optional(),
+    FrameRate_Num: z.coerce.number().int().positive().optional(),
+    FrameRate_Den: z.literal('1').optional(),
     FrameCount: z.coerce.number().int().nonnegative().optional(),
     ElementCount: z.coerce.number().int().nonnegative().optional(),
     FirstDisplay_Delay_Frames: z.coerce.number().int().positive().optional(),

@@ -54,6 +54,7 @@ export const languageSchema = z
       'unk',
       'vie',
       'zho',
+      'zxx',
     ])
   )
   .default('unk')

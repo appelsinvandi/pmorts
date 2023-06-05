@@ -1,0 +1,9 @@
+{
+  "extends": ["../../tsconfig.json"],
+  "include": ["src/index.mts"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "jsx": "react-jsx",
+    "noUnusedLocals": false
+  }
+}

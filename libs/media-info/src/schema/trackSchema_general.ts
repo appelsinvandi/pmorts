@@ -1,11 +1,16 @@
 import { z } from 'zod'
-import { dateSchema, yesNoBooleanSchema, encodableTextSchema } from './helpers/index.js'
+import {
+  dateSchema,
+  yesNoBooleanSchema,
+  encodableTextSchema,
+} from './helpers/index.js'
 
+export type MediaInfoTrackGeneral = z.infer<typeof trackSchema_general>
 export const trackSchema_general = z
   .object({
     '@type': z.literal('General'),
     UniqueID: z.string().optional(),
-    ID: z.coerce.number().int().nonnegative().optional(),
+    ID: z.coerce.number().int().nonnegative().transform(String).optional(),
 
     ContentType: z.enum(['Movie', 'Short Film', 'Unknown Type']).optional(),
 
@@ -39,15 +44,46 @@ export const trackSchema_general = z
       .transform((e) => e.toLowerCase())
       .pipe(z.enum(['avi', 'flv', 'mkv', 'mov', 'm4v', 'mp4', 'mpeg', 'wmv'])),
 
-    Format: z.enum(['AVI', 'Matroska', 'MPEG-4', 'Flash Video', 'MPEG-PS', 'MPEG-TS', 'Windows Media']),
+    Format: z.enum([
+      'AVI',
+      'Matroska',
+      'MPEG-4',
+      'Flash Video',
+      'MPEG-PS',
+      'MPEG-TS',
+      'Windows Media',
+    ]),
     Format_Version: z.coerce.number().positive().optional(),
-    Format_Profile: z.enum(['Base Media', 'Base Media / Version 2', 'OpenDML', 'QuickTime', 'Sony PSP']).optional(),
+    Format_Profile: z
+      .enum([
+        'Base Media',
+        'Base Media / Version 2',
+        'OpenDML',
+        'QuickTime',
+        'Sony PSP',
+      ])
+      .optional(),
     Format_Settings: z.enum(['BitmapInfoHeader / WaveFormatEx']).optional(),
     CodecID: z.enum(['isom', 'M4V ', 'MSNV', 'mp42', 'qt  ']).optional(),
     CodecID_Compatible: z
       .string()
       .transform((e) => e.split('/'))
-      .pipe(z.enum(['3gp5', 'avc1', 'isom', 'iso2', 'M4A ', 'M4V ', 'MSNV', 'mp41', 'mp42', 'qt  ']).array())
+      .pipe(
+        z
+          .enum([
+            '3gp5',
+            'avc1',
+            'isom',
+            'iso2',
+            'M4A ',
+            'M4V ',
+            'MSNV',
+            'mp41',
+            'mp42',
+            'qt  ',
+          ])
+          .array()
+      )
       .optional(),
     CodecID_Version: z
       .string()
@@ -88,8 +124,12 @@ export const trackSchema_general = z
     Encoded_Date: dateSchema.optional(),
     Tagged_Date: dateSchema.optional(),
     File_Created_Date: dateSchema,
-    File_Created_Date_Local: z.string().regex(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}$/),
+    File_Created_Date_Local: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}$/),
     File_Modified_Date: dateSchema,
-    File_Modified_Date_Local: z.string().regex(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}$/),
+    File_Modified_Date_Local: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}$/),
   })
   .strict()

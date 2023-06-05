@@ -51,9 +51,20 @@ const videoEncodingSettingsSchema = z.discriminatedUnion('codec', [
           'placebo',
         ])
         .optional(),
-      'profile:v': z.enum(['baseline', 'main', 'high', 'high10', 'high422', 'high444']).optional(),
+      'profile:v': z
+        .enum(['baseline', 'main', 'high', 'high10', 'high422', 'high444'])
+        .optional(),
       tune: z
-        .enum(['film', 'animation', 'grain', 'stillimage', 'fastdecode', 'zerolatency', 'psnr', 'ssim'])
+        .enum([
+          'film',
+          'animation',
+          'grain',
+          'stillimage',
+          'fastdecode',
+          'zerolatency',
+          'psnr',
+          'ssim',
+        ])
         .array()
         .transform(_.uniq)
         .optional(),
@@ -110,7 +121,14 @@ const videoEncodingSettingsSchema = z.discriminatedUnion('codec', [
         ])
         .optional(),
       tune: z
-        .enum(['animation', 'grain', 'fastdecode', 'zerolatency', 'psnr', 'ssim'])
+        .enum([
+          'animation',
+          'grain',
+          'fastdecode',
+          'zerolatency',
+          'psnr',
+          'ssim',
+        ])
         .array()
         .transform(_.uniq)
         .optional(),
@@ -124,60 +142,78 @@ const containerExtensionsSchema = z.enum(['mkv', 'mp4'])
 const languageCodeSchema = z.string().length(3)
 const videoCodecSchema = z.enum(['AV1', 'AVC', 'HEVC'])
 
-export const rulesSchema = z.object({
-  audio: z.object({
-    codec: z
-      .object({
-        preferred: audioCodecSchema,
-        allowed: audioCodecSchema.array(),
-      })
-      .transform((e) => ({ ...e, allowed: [...new Set([...e.allowed, e.preferred])] })),
-    encodingParams: audioEncodingSchema,
-    language: z.object({
-      allowed: languageCodeSchema.array().transform((e) => [...new Set([...e, 'und', 'unk'])]),
+export const rulesSchema = z
+  .object({
+    audio: z.object({
+      codec: z
+        .object({
+          preferred: audioCodecSchema,
+          allowed: audioCodecSchema.array(),
+        })
+        .transform((e) => ({
+          ...e,
+          allowed: [...new Set([...e.allowed, e.preferred])],
+        })),
+      encodingParams: audioEncodingSchema,
+      language: z.object({
+        allowed: languageCodeSchema
+          .array()
+          .transform((e) => [...new Set([...e, 'und', 'unk'])]),
+      }),
     }),
-  }),
-  general: z.object({
-    extension: z
-      .object({
-        preferred: containerExtensionsSchema,
-        allowed: containerExtensionsSchema.array(),
-      })
-      .transform((e) => ({ ...e, allowed: [...new Set([...e.allowed, e.preferred])] })),
-  }),
-  video: z.object({
-    codec: z
-      .object({
-        preferred: videoCodecSchema,
-        allowed: videoCodecSchema.array(),
-      })
-      .transform((e) => ({ ...e, allowed: [...new Set([...e.allowed, e.preferred])] })),
-    encodingParams: videoEncodingSettingsSchema,
-    resolutionBoundingBox: z.object({
-      longEdgePx: z.number().int().positive(),
-      shortEdgePx: z.number().int().positive(),
+    general: z.object({
+      extension: z
+        .object({
+          preferred: containerExtensionsSchema,
+          allowed: containerExtensionsSchema.array(),
+        })
+        .transform((e) => ({
+          ...e,
+          allowed: [...new Set([...e.allowed, e.preferred])],
+        })),
     }),
-  }),
-  text: z.object({
-    language: z.object({
-      allowed: languageCodeSchema.array().transform((e) => [...new Set([...e, 'und', 'unk'])]),
+    video: z.object({
+      codec: z
+        .object({
+          preferred: videoCodecSchema,
+          allowed: videoCodecSchema.array(),
+        })
+        .transform((e) => ({
+          ...e,
+          allowed: [...new Set([...e.allowed, e.preferred])],
+        })),
+      encodingParams: videoEncodingSettingsSchema,
+      resolutionBoundingBox: z.object({
+        longEdgePx: z.number().int().positive(),
+        shortEdgePx: z.number().int().positive(),
+      }),
     }),
-    style: z.enum(['embedded', 'external']),
-  }),
-})
+    text: z.object({
+      language: z.object({
+        allowed: languageCodeSchema
+          .array()
+          .transform((e) => [...new Set([...e, 'und', 'unk'])]),
+      }),
+      style: z.enum(['embedded', 'external']),
+    }),
+  })
+  .strict()
 
-export const appConfigSchema = z.object({
-  mediaRoots: z
-    .object({
-      name: z.string().min(1),
-      directories: z
-        .string()
-        .min(1)
-        .refine((a) => fs.existsSync(a), { message: 'Path does not exist.' })
-        .array()
-        .min(1),
-      rules: rulesSchema,
-    })
-    .array()
-    .min(1),
-})
+export const appConfigSchema = z
+  .object({
+    mediaRoots: z
+      .object({
+        name: z.string().min(1),
+        directories: z
+          .string()
+          .min(1)
+          .refine((a) => fs.existsSync(a), { message: 'Path does not exist.' })
+          .array()
+          .min(1),
+        rules: rulesSchema.optional(),
+      })
+      .strict()
+      .array()
+      .min(1),
+  })
+  .strict()
