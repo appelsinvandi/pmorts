@@ -5,6 +5,16 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@alcalzone/ansi-tokenize@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@alcalzone/ansi-tokenize@npm:0.1.1"
+  dependencies:
+    ansi-styles: ^6.2.1
+    is-fullwidth-code-point: ^4.0.0
+  checksum: 73c453cf280cf00f4feee4de389e987a86be27d1c35279edb6b09d0d67ebd69250eaa6bb27083cf7315dca59bebb550a28fac330e5b29ac6b752f7f1644ee026
+  languageName: node
+  linkType: hard
+
 "@app/anime-tracks-optimizer@workspace:apps/anime-tracks-optimizer":
   version: 0.0.0-use.local
   resolution: "@app/anime-tracks-optimizer@workspace:apps/anime-tracks-optimizer"
@@ -34,7 +44,7 @@ __metadata:
     commander: ^10.0.1
     fastq: ^1.15.0
     immer: ^10.0.2
-    ink: ^4.2.0
+    ink: ^4.3.0
     react: ^18.2.0
     tsx: ^3.12.7
     typescript: ^5.1.6
@@ -1227,10 +1237,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ink@npm:4.2.0":
-  version: 4.2.0
-  resolution: "ink@npm:4.2.0"
+"ink@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "ink@npm:4.3.0"
   dependencies:
+    "@alcalzone/ansi-tokenize": ^0.1.1
     ansi-escapes: ^6.0.0
     auto-bind: ^5.0.1
     chalk: ^5.2.0
@@ -1264,48 +1275,7 @@ __metadata:
       optional: true
     react-devtools-core:
       optional: true
-  checksum: feb42cd1de654e1d3be99040eadc4f130c21a653bf7a219d1f67df975c644f68a7be6372e8855cb09375d682716c38a354d473a03767744b08e2439f9cd4cacc
-  languageName: node
-  linkType: hard
-
-"ink@patch:ink@npm%3A4.2.0#./.yarn/patches/ink-npm-4.2.0-fe742db375.patch::locator=pmorts%40workspace%3A.":
-  version: 4.2.0
-  resolution: "ink@patch:ink@npm%3A4.2.0#./.yarn/patches/ink-npm-4.2.0-fe742db375.patch::version=4.2.0&hash=72a25e&locator=pmorts%40workspace%3A."
-  dependencies:
-    ansi-escapes: ^6.0.0
-    auto-bind: ^5.0.1
-    chalk: ^5.2.0
-    cli-boxes: ^3.0.0
-    cli-cursor: ^4.0.0
-    cli-truncate: ^3.1.0
-    code-excerpt: ^4.0.0
-    indent-string: ^5.0.0
-    is-ci: ^3.0.1
-    is-lower-case: ^2.0.2
-    is-upper-case: ^2.0.2
-    lodash: ^4.17.21
-    patch-console: ^2.0.0
-    react-reconciler: ^0.29.0
-    scheduler: ^0.23.0
-    signal-exit: ^3.0.7
-    slice-ansi: ^6.0.0
-    stack-utils: ^2.0.6
-    string-width: ^5.1.2
-    type-fest: ^0.12.0
-    widest-line: ^4.0.1
-    wrap-ansi: ^8.1.0
-    ws: ^8.12.0
-    yoga-wasm-web: ~0.3.3
-  peerDependencies:
-    "@types/react": ">=18.0.0"
-    react: ">=18.0.0"
-    react-devtools-core: ^4.19.1
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    react-devtools-core:
-      optional: true
-  checksum: f7824c8c026fce4f3a0f50f3e953545a809c89f996999c7b166adb7ad70c3e1d11bbe1e7bed5f835166d43551fee6a750e19c825fac3d4fffebbbcf4634d583c
+  checksum: 80a4e9bfd14e50d5dcaa824673795ec416abda480f690bb94e1505f129cc066cc9acdf40d20c019c89d73f99ba948e8bd1fa915a51798cc0610656422b73ad7c
   languageName: node
   linkType: hard
 
