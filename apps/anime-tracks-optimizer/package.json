@@ -15,7 +15,7 @@
     "@total-typescript/ts-reset": "^0.4.2",
     "@types/cli-progress": "^3.11.0",
     "@types/lodash": "^4.14.195",
-    "@types/node": "^18.16.20",
+    "@types/node": "^18.17.0",
     "tsx": "^3.12.7"
   }
 }
