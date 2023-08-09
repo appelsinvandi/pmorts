@@ -5,7 +5,7 @@
     "./src/index.mts"
   ],
   "dependencies": {
-    "luxon": "^3.3.0",
+    "luxon": "^3.4.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
