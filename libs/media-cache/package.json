@@ -16,7 +16,7 @@
     "@types/cli-progress": "^3.11.0",
     "@types/lodash": "^4.14.197",
     "@types/mime": "^3.0.1",
-    "@types/node": "^18.17.4",
+    "@types/node": "^18.17.5",
     "prisma": "^4.16.2"
   }
 }
