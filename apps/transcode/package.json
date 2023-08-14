@@ -10,7 +10,7 @@
     "@lib/media-info": "workspace:*",
     "cli-progress": "^3.12.0",
     "lodash": "^4.17.21",
-    "zod": "^3.21.4"
+    "zod": "^3.22.0"
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.4.2",
