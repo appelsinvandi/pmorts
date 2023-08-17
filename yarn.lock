@@ -22,7 +22,7 @@ __metadata:
     "@lib/constants": "workspace:*"
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
-    "@total-typescript/ts-reset": ^0.4.2
+    "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.0
     "@types/lodash": ^4.14.197
     "@types/node": ^18.17.5
@@ -38,7 +38,7 @@ __metadata:
   dependencies:
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
-    "@total-typescript/ts-reset": ^0.4.2
+    "@total-typescript/ts-reset": ^0.5.1
     "@types/node": ^18.17.5
     "@types/react": ^18.2.20
     commander: ^10.0.1
@@ -60,7 +60,7 @@ __metadata:
     "@lib/constants": "workspace:*"
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
-    "@total-typescript/ts-reset": ^0.4.2
+    "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.0
     "@types/lodash": ^4.14.197
     "@types/node": ^18.17.5
@@ -266,7 +266,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lib/constants@workspace:libs/constants"
   dependencies:
-    "@total-typescript/ts-reset": ^0.4.2
+    "@total-typescript/ts-reset": ^0.5.1
     "@types/node": ^18.17.5
   languageName: unknown
   linkType: soft
@@ -277,7 +277,7 @@ __metadata:
   dependencies:
     "@lib/media-info": "workspace:*"
     "@prisma/client": ^4.16.2
-    "@total-typescript/ts-reset": ^0.4.2
+    "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.0
     "@types/lodash": ^4.14.197
     "@types/mime": ^3.0.1
@@ -293,7 +293,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lib/media-info@workspace:libs/media-info"
   dependencies:
-    "@total-typescript/ts-reset": ^0.4.2
+    "@total-typescript/ts-reset": ^0.5.1
     "@types/luxon": ^3.3.1
     "@types/node": ^18.17.5
     luxon: ^3.4.0
@@ -356,10 +356,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@total-typescript/ts-reset@npm:^0.4.2":
-  version: 0.4.2
-  resolution: "@total-typescript/ts-reset@npm:0.4.2"
-  checksum: e3681b8fb48cf63538c19e7f203de5ec8b1abdcd0db5c6bd48e0881e2a86977771118c6c2930691947d11213b10a654bc2328b479c4dc0ddec7dfde129d08569
+"@total-typescript/ts-reset@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@total-typescript/ts-reset@npm:0.5.1"
+  checksum: f773a2b91707fab677c361837ef7855522d470e8a3abc0b9209a04832715feb0aa1ef0d10db880c1232acbd2c84222ec7c1bbf3f92d1d34d18c18ce08d304e45
   languageName: node
   linkType: hard
 
