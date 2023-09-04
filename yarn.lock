@@ -23,7 +23,7 @@ __metadata:
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/cli-progress": ^3.11.0
+    "@types/cli-progress": ^3.11.1
     "@types/lodash": ^4.14.197
     "@types/node": ^18.17.14
     cli-progress: ^3.12.0
@@ -61,7 +61,7 @@ __metadata:
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/cli-progress": ^3.11.0
+    "@types/cli-progress": ^3.11.1
     "@types/lodash": ^4.14.197
     "@types/node": ^18.17.14
     cli-progress: ^3.12.0
@@ -442,7 +442,7 @@ __metadata:
     "@lib/media-info": "workspace:*"
     "@prisma/client": ^4.16.2
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/cli-progress": ^3.11.0
+    "@types/cli-progress": ^3.11.1
     "@types/lodash": ^4.14.197
     "@types/mime": ^3.0.1
     "@types/node": ^18.17.14
@@ -555,12 +555,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cli-progress@npm:^3.11.0":
-  version: 3.11.0
-  resolution: "@types/cli-progress@npm:3.11.0"
+"@types/cli-progress@npm:^3.11.1":
+  version: 3.11.1
+  resolution: "@types/cli-progress@npm:3.11.1"
   dependencies:
     "@types/node": "*"
-  checksum: d4401622333e888925b47c5d5bb0b89dddae17cc020f909a64ad7275b326bf3c6e9cd467f625a197fd958a1e49220d32f4a2b0bf2948fee330c719a9b985674e
+  checksum: c207a29c84a1c04f1d01981abf82e9e51e651e6aab12db7663db36a9591a73c6269a9005d31e3eb44f18fd15c955775520e2a7e9a074429cc540d6f0514d49a0
   languageName: node
   linkType: hard
 
