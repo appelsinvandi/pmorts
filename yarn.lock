@@ -24,7 +24,7 @@ __metadata:
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.1
-    "@types/lodash": ^4.14.197
+    "@types/lodash": ^4.14.198
     "@types/node": ^18.17.14
     cli-progress: ^3.12.0
     lodash: ^4.17.21
@@ -62,7 +62,7 @@ __metadata:
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.1
-    "@types/lodash": ^4.14.197
+    "@types/lodash": ^4.14.198
     "@types/node": ^18.17.14
     cli-progress: ^3.12.0
     lodash: ^4.17.21
@@ -443,7 +443,7 @@ __metadata:
     "@prisma/client": ^4.16.2
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.1
-    "@types/lodash": ^4.14.197
+    "@types/lodash": ^4.14.198
     "@types/mime": ^3.0.1
     "@types/node": ^18.17.14
     cli-progress: ^3.12.0
@@ -460,7 +460,7 @@ __metadata:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/luxon": ^3.3.2
     "@types/node": ^18.17.14
-    luxon: ^3.4.2
+    luxon: ^3.4.3
     zod: ^3.22.2
   languageName: unknown
   linkType: soft
@@ -564,10 +564,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.197":
-  version: 4.14.197
-  resolution: "@types/lodash@npm:4.14.197"
-  checksum: 53d7567d1704de76cf33266c78062e0fd722d4b846e5b1417d0b6ef0ee41c0d9c451b92bc34f73d5f1fcc45c7d36511e92f6f47a9279b48157ba60a92ddaa078
+"@types/lodash@npm:^4.14.198":
+  version: 4.14.198
+  resolution: "@types/lodash@npm:4.14.198"
+  checksum: b290e4480707151bcec738bca40527915defe52a0d8e26c83685c674163a265e1a88cb2ee56b0fb587a89819d0cd5df86ada836aec3e9c2e4bf516e7d348d524
   languageName: node
   linkType: hard
 
@@ -1641,10 +1641,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^3.4.2":
-  version: 3.4.2
-  resolution: "luxon@npm:3.4.2"
-  checksum: efefdfaea90f4c8e502db8eb255385e6dac6733b6a9e1372eaf1a866cc1118363e235a3f6df505b837abc8bbcdfd8f0718a8de387b80cef9ee624d8791ca0844
+"luxon@npm:^3.4.3":
+  version: 3.4.3
+  resolution: "luxon@npm:3.4.3"
+  checksum: 3eade81506224d038ed24035a0cd0dd4887848d7eba9361dce9ad8ef81380596a68153240be3988721f9690c624fb449fcf8fd8c3fc0681a6a8496faf48e92a3
   languageName: node
   linkType: hard
 
