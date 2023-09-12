@@ -16,6 +16,6 @@
     "@types/cli-progress": "^3.11.2",
     "@types/lodash": "^4.14.198",
     "@types/node": "^18.17.15",
-    "tsx": "^3.12.8"
+    "tsx": "^3.12.9"
   }
 }
