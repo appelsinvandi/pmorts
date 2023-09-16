@@ -25,7 +25,7 @@ __metadata:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.2
     "@types/lodash": ^4.14.198
-    "@types/node": ^18.17.16
+    "@types/node": ^18.17.17
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     tsx: ^3.12.10
@@ -39,7 +39,7 @@ __metadata:
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/node": ^18.17.16
+    "@types/node": ^18.17.17
     "@types/react": ^18.2.21
     commander: ^10.0.1
     fastq: ^1.15.0
@@ -63,7 +63,7 @@ __metadata:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.2
     "@types/lodash": ^4.14.198
-    "@types/node": ^18.17.16
+    "@types/node": ^18.17.17
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     tsx: ^3.12.10
@@ -431,7 +431,7 @@ __metadata:
   resolution: "@lib/constants@workspace:libs/constants"
   dependencies:
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/node": ^18.17.16
+    "@types/node": ^18.17.17
   languageName: unknown
   linkType: soft
 
@@ -445,7 +445,7 @@ __metadata:
     "@types/cli-progress": ^3.11.2
     "@types/lodash": ^4.14.198
     "@types/mime": ^3.0.1
-    "@types/node": ^18.17.16
+    "@types/node": ^18.17.17
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     mime: ^3.0.0
@@ -459,7 +459,7 @@ __metadata:
   dependencies:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/luxon": ^3.3.2
-    "@types/node": ^18.17.16
+    "@types/node": ^18.17.17
     luxon: ^3.4.3
     zod: ^3.22.2
   languageName: unknown
@@ -541,10 +541,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/recommended@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@tsconfig/recommended@npm:1.0.2"
-  checksum: 8dab26157fc9748ff2d090b95f4dbe2aeb592dbdcf90f373f712da5ac54ff24f66193e7ee68fdc45880e7f767cfeb339ef3e9970ca59608ef93225db047f0d16
+"@tsconfig/recommended@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@tsconfig/recommended@npm:1.0.3"
+  checksum: cf2bf93d419e28b98ac82d9587035daf7dc1e0ef9b8db873a7962967d8744df352ebd2986b046911889e989d4f2caec3bf5826a4c8a4b61572d03329fdc56b34
   languageName: node
   linkType: hard
 
@@ -599,10 +599,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.17.16":
-  version: 18.17.16
-  resolution: "@types/node@npm:18.17.16"
-  checksum: 8f9dbaf4a67a14110e2a0d805f9b57f3a5cda774dbcb7b1e7973efe31d5eeea358482dbe36a5bfadb0dde99f065f1ae0531f25a032f015871aa0b2896eb3c4ae
+"@types/node@npm:^18.17.17":
+  version: 18.17.17
+  resolution: "@types/node@npm:18.17.17"
+  checksum: ff28f347c77723780836f9bb2ffa6db0cd72490bfd7604397c03db31db34f1f2899e82f0aaf3e825efeb09c15bd94d076ea9aca19a1407e1b56cb4603318936c
   languageName: node
   linkType: hard
 
@@ -1987,7 +1987,7 @@ __metadata:
   dependencies:
     "@tsconfig/esm": ^1.0.4
     "@tsconfig/node18": ^18.2.2
-    "@tsconfig/recommended": ^1.0.2
+    "@tsconfig/recommended": ^1.0.3
     "@tsconfig/strictest": ^2.0.2
     husky: ^8.0.3
     prettier: ^2.8.8
