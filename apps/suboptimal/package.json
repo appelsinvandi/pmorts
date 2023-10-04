@@ -19,7 +19,7 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^18.18.3",
-    "@types/react": "^18.2.24",
+    "@types/react": "^18.2.25",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2"
   }
