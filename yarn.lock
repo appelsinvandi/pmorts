@@ -250,7 +250,7 @@ __metadata:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.4
     "@types/lodash": ^4.14.200
-    "@types/mime": ^3.0.2
+    "@types/mime": ^3.0.3
     "@types/node": ^18.18.6
     cli-progress: ^3.12.0
     lodash: ^4.17.21
@@ -384,10 +384,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mime@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "@types/mime@npm:3.0.2"
-  checksum: 09cf74f6377d1b27f4a24512cb689ad30af59880ac473ed6f7bc5285ecde88bbe8fe500789340ad57810da9d6fe1704f86e8bfe147b9ea76d58925204a60b906
+"@types/mime@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@types/mime@npm:3.0.3"
+  checksum: d905a6b4736cc60fb56b39776b77ba0e10983d39f0aefc0034dc895b6ef90780e2f2e0a8c576539adb2963741a5aa67a6924d8940b0f7250f69e3e68a57f93b5
   languageName: node
   linkType: hard
 
