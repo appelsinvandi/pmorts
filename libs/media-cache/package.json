@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
-    "@types/cli-progress": "^3.11.3",
+    "@types/cli-progress": "^3.11.4",
     "@types/lodash": "^4.14.199",
     "@types/mime": "^3.0.2",
     "@types/node": "^18.18.5",
