@@ -14,7 +14,7 @@
     "ink": "^4.4.1",
     "react": "^18.2.0",
     "zod": "^3.22.4",
-    "zustand": "^4.4.4"
+    "zustand": "^4.4.5"
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
