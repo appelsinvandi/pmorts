@@ -14,8 +14,8 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/cli-progress": "^3.11.5",
-    "@types/lodash": "^4.14.200",
-    "@types/node": "^18.18.8",
+    "@types/lodash": "^4.14.201",
+    "@types/node": "^18.18.9",
     "tsx": "^3.14.0"
   }
 }

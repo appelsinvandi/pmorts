@@ -24,8 +24,8 @@ __metadata:
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.5
-    "@types/lodash": ^4.14.200
-    "@types/node": ^18.18.8
+    "@types/lodash": ^4.14.201
+    "@types/node": ^18.18.9
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     tsx: ^3.14.0
@@ -39,7 +39,7 @@ __metadata:
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/node": ^18.18.8
+    "@types/node": ^18.18.9
     "@types/react": ^18.2.36
     commander: ^10.0.1
     fastq: ^1.15.0
@@ -62,8 +62,8 @@ __metadata:
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.5
-    "@types/lodash": ^4.14.200
-    "@types/node": ^18.18.8
+    "@types/lodash": ^4.14.201
+    "@types/node": ^18.18.9
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     tsx: ^3.14.0
@@ -237,7 +237,7 @@ __metadata:
   resolution: "@lib/constants@workspace:libs/constants"
   dependencies:
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/node": ^18.18.8
+    "@types/node": ^18.18.9
   languageName: unknown
   linkType: soft
 
@@ -249,9 +249,9 @@ __metadata:
     "@prisma/client": ^4.16.2
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.5
-    "@types/lodash": ^4.14.200
-    "@types/mime": ^3.0.3
-    "@types/node": ^18.18.8
+    "@types/lodash": ^4.14.201
+    "@types/mime": ^3.0.4
+    "@types/node": ^18.18.9
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     mime: ^3.0.0
@@ -265,7 +265,7 @@ __metadata:
   dependencies:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/luxon": ^3.3.4
-    "@types/node": ^18.18.8
+    "@types/node": ^18.18.9
     luxon: ^3.4.3
     zod: ^3.22.4
   languageName: unknown
@@ -370,10 +370,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.200":
-  version: 4.14.200
-  resolution: "@types/lodash@npm:4.14.200"
-  checksum: 6471f8bb5da692a6ecf03a8da4935bfbc341e67ee9bcb4f5730bfacff0c367232548f0a01e8ac5ea18c6fe78fb085d502494e33ccb47a7ee87cbdee03b47d00d
+"@types/lodash@npm:^4.14.201":
+  version: 4.14.201
+  resolution: "@types/lodash@npm:4.14.201"
+  checksum: 484be655298e9b2dc2d218ea934071b2ea31e4a531c561dd220dbda65237e8d08c20dc2d457ac24f29be7fe167415bf7bb9360ea0d80bdb8b0f0ec8d8db92fae
   languageName: node
   linkType: hard
 
@@ -384,10 +384,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mime@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "@types/mime@npm:3.0.3"
-  checksum: d905a6b4736cc60fb56b39776b77ba0e10983d39f0aefc0034dc895b6ef90780e2f2e0a8c576539adb2963741a5aa67a6924d8940b0f7250f69e3e68a57f93b5
+"@types/mime@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "@types/mime@npm:3.0.4"
+  checksum: a6139c8e1f705ef2b064d072f6edc01f3c099023ad7c4fce2afc6c2bf0231888202adadbdb48643e8e20da0ce409481a49922e737eca52871b3dc08017455843
   languageName: node
   linkType: hard
 
@@ -405,12 +405,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.18.8":
-  version: 18.18.8
-  resolution: "@types/node@npm:18.18.8"
+"@types/node@npm:^18.18.9":
+  version: 18.18.9
+  resolution: "@types/node@npm:18.18.9"
   dependencies:
     undici-types: ~5.26.4
-  checksum: d6a82bfc28bca8e4e32ffc9526798d1aea62f6993ea3a535cd3f47ac3f725a48efe3f484d68168dd154af0001c89935e4e1d77e7b1809c3824c6382bf99b86f6
+  checksum: 629ce20357586144031cb43d601617eef45e59460dea6b1e123f708e6885664f44d54f65e5b72b2614af5b8613f3652ced832649c0b991accbc6a85139befa51
   languageName: node
   linkType: hard
 
