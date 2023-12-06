@@ -21,6 +21,6 @@
     "@types/node": "^18.19.2",
     "@types/react": "^18.2.42",
     "tsx": "^3.14.0",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.3"
   }
 }
