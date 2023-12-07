@@ -6,6 +6,6 @@
   ],
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
-    "@types/node": "^18.19.2"
+    "@types/node": "^18.19.3"
   }
 }
