@@ -9,7 +9,7 @@
     "@prisma/client": "^4.16.2",
     "cli-progress": "^3.12.0",
     "lodash": "^4.17.21",
-    "mime": "^3.0.0"
+    "mime": "^4.0.1"
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
