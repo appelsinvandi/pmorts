@@ -9,7 +9,7 @@
     "@lib/media-cache": "workspace:*",
     "@lib/media-info": "workspace:*",
     "commander": "^10.0.1",
-    "fastq": "^1.15.0",
+    "fastq": "^1.16.0",
     "immer": "^10.0.3",
     "ink": "^4.4.1",
     "react": "^18.2.0",
