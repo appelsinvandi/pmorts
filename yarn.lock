@@ -264,7 +264,7 @@ __metadata:
   resolution: "@lib/media-info@workspace:libs/media-info"
   dependencies:
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/luxon": ^3.3.7
+    "@types/luxon": ^3.3.8
     "@types/node": ^18.19.4
     luxon: ^3.4.4
     zod: ^3.22.4
@@ -377,10 +377,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/luxon@npm:^3.3.7":
-  version: 3.3.7
-  resolution: "@types/luxon@npm:3.3.7"
-  checksum: 97026557e92bcba308a5592f981591cd200d493fc8997874d79acecf6a2ec41debeded3ac5cd80c371ef7f6f56cc0d1be0a5aca846e03d3e6b4a2be37256fe2f
+"@types/luxon@npm:^3.3.8":
+  version: 3.3.8
+  resolution: "@types/luxon@npm:3.3.8"
+  checksum: 026711b4aefc01c6e233e359c693b6d4c0873acc3f52a08661ea3751b2cf3e34d1ce1d5b0b99b0e40a059a2a3755acc20498d37db5f9a5a4f0f330cdf72db3db
   languageName: node
   linkType: hard
 
