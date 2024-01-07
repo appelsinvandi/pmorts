@@ -25,7 +25,7 @@ __metadata:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.5
     "@types/lodash": ^4.14.202
-    "@types/node": ^18.19.4
+    "@types/node": ^18.19.5
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     tsx: ^3.14.0
@@ -39,7 +39,7 @@ __metadata:
     "@lib/media-cache": "workspace:*"
     "@lib/media-info": "workspace:*"
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/node": ^18.19.4
+    "@types/node": ^18.19.5
     "@types/react": ^18.2.47
     commander: ^10.0.1
     fastq: ^1.16.0
@@ -63,7 +63,7 @@ __metadata:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/cli-progress": ^3.11.5
     "@types/lodash": ^4.14.202
-    "@types/node": ^18.19.4
+    "@types/node": ^18.19.5
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     tsx: ^3.14.0
@@ -237,7 +237,7 @@ __metadata:
   resolution: "@lib/constants@workspace:libs/constants"
   dependencies:
     "@total-typescript/ts-reset": ^0.5.1
-    "@types/node": ^18.19.4
+    "@types/node": ^18.19.5
   languageName: unknown
   linkType: soft
 
@@ -251,7 +251,7 @@ __metadata:
     "@types/cli-progress": ^3.11.5
     "@types/lodash": ^4.14.202
     "@types/mime": ^3.0.4
-    "@types/node": ^18.19.4
+    "@types/node": ^18.19.5
     cli-progress: ^3.12.0
     lodash: ^4.17.21
     mime: ^3.0.0
@@ -265,7 +265,7 @@ __metadata:
   dependencies:
     "@total-typescript/ts-reset": ^0.5.1
     "@types/luxon": ^3.4.0
-    "@types/node": ^18.19.4
+    "@types/node": ^18.19.5
     luxon: ^3.4.4
     zod: ^3.22.4
   languageName: unknown
@@ -405,12 +405,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.19.4":
-  version: 18.19.4
-  resolution: "@types/node@npm:18.19.4"
+"@types/node@npm:^18.19.5":
+  version: 18.19.5
+  resolution: "@types/node@npm:18.19.5"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 3a32a31b2df85d4bebb5e3c91ec1a0908d587a2a2fd31ab4eeebd609d1c04bbcc9ba97e290e3230f843c9f43f17efb9f5cde56412b4b0f5acbfe5577179b23c8
+  checksum: 6dab1b67e00ac32799674d22bafa63ea99ddb8218117582660fb89671a1b2343caafb43ed7447320102f299333a475176f5bc11a9b0f1591439d548f93e0c219
   languageName: node
   linkType: hard
 
