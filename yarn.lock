@@ -1713,7 +1713,7 @@ __metadata:
     "@tsconfig/strictest": ^2.0.2
     husky: ^8.0.3
     prettier: ^2.8.8
-    pretty-quick: ^3.1.4
+    pretty-quick: ^3.2.1
     tslib: ^2.6.2
     typescript: ^5.3.3
   languageName: unknown
@@ -1728,9 +1728,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-quick@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "pretty-quick@npm:3.1.4"
+"pretty-quick@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "pretty-quick@npm:3.2.1"
   dependencies:
     chalk: ^4.1.2
     execa: ^4.1.0
@@ -1738,11 +1738,12 @@ __metadata:
     ignore: ^5.3.0
     mri: ^1.2.0
     multimatch: ^5.0.0
+    tslib: ^2.6.2
   peerDependencies:
     prettier: ^2.0.0
   bin:
-    pretty-quick: bin/pretty-quick.js
-  checksum: 86b834120dab6041cfd3c7ae8d0f36665a03ee4119693fcc449b2fb0c708742119f04d2825f429fb35c5180055d4d89960f54b319a336276a83c13e7180e1195
+    pretty-quick: dist/cli.js
+  checksum: 95d727d69e15a6e1c78901f9f2bf6b23287f8a1099b43a7861f0bd67510945d8d875559fe13f3c9392e53ed5a26d0b5bcd164eec08c708e4be071320b029d5bc
   languageName: node
   linkType: hard
 
