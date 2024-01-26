@@ -42,7 +42,7 @@ __metadata:
     "@types/node": ^18.19.10
     "@types/react": ^18.2.48
     commander: ^10.0.1
-    fastq: ^1.16.0
+    fastq: ^1.17.0
     immer: ^10.0.3
     ink: ^4.4.1
     react: ^18.2.0
@@ -889,12 +889,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastq@npm:^1.16.0":
-  version: 1.16.0
-  resolution: "fastq@npm:1.16.0"
+"fastq@npm:^1.17.0":
+  version: 1.17.0
+  resolution: "fastq@npm:1.17.0"
   dependencies:
     reusify: ^1.0.4
-  checksum: 1d40ed1f100ae625e5720484e8602b7ad07649370f1cbc3e34a6b9630a0bfed6946bab0322d8a368a1e3cde87bb9bbb8d3bc2ae01a0c1f022fac1d07c04e4feb
+  checksum: a1c88c357a220bdc666c2df5ec6071d49bdf79ea827d92f9a9559da3ff1b4288eecca3ecbb7b6ddf0ba016eb0a4bf756bf17c411a6d10c814aecd26e939cbd06
   languageName: node
   linkType: hard
 
