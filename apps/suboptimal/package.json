@@ -8,7 +8,7 @@
   "dependencies": {
     "@lib/media-cache": "workspace:*",
     "@lib/media-info": "workspace:*",
-    "commander": "^10.0.1",
+    "commander": "^12.0.0",
     "fastq": "^1.17.0",
     "immer": "^10.0.3",
     "ink": "^4.4.1",
